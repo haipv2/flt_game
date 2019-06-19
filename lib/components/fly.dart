@@ -6,7 +6,6 @@ import '../LangawGame.dart';
 class Fly{
   final LangawGame game;
   Rect flyRect;
-  Paint flyPaint;
   bool isDead = false;
   bool isOffScreen = false;
   Sprite deadSprite;
@@ -21,10 +20,11 @@ class Fly{
     setTargetLocation();
   }
   void render(Canvas c) {
+//    print(flyingSpriteIndex);
     if (isDead) {
-      deadSprite.renderRect(c, flyRect.inflate(2));
+      deadSprite.renderRect(c, flyRect.inflate(5));
     }else {
-      flyingSprite[flyingSpriteIndex.toInt()].renderRect(c, flyRect.inflate(2));
+      flyingSprite[flyingSpriteIndex.toInt()].renderRect(c, flyRect.inflate(5));
     }
   }
 
@@ -49,15 +49,14 @@ class Fly{
         Offset stepToTarget = Offset.fromDirection(toTarget.direction, stepDistance);
         flyRect = flyRect.shift(stepToTarget);
       } else {
-        flyRect = flyRect.shift(toTarget);
         setTargetLocation();
+        flyRect = flyRect.shift(toTarget);
       }
     }
   }
 
   void onTapDown() {
     isDead=true;
-//    flyPaint.color =  Color(0xffff4757);
     game.spawnFly();
   }
 

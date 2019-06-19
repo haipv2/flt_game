@@ -34,10 +34,6 @@ class LangawGame extends Game {
 
   @override
   void render(Canvas canvas) {
-//    Rect bgRect = Rect.fromLTWH(0, 0, screenSize.width, screenSize.height);
-//    Paint bgPaint = Paint();
-//    bgPaint.color = Color(0xff576574);
-//    canvas.drawRect(bgRect, bgPaint);
     background.render(canvas);
     flies.forEach((Fly fly) => fly.render(canvas));
 
@@ -61,23 +57,25 @@ class LangawGame extends Game {
     double x = rnd.nextDouble() * (screenSize.width - tileSize);
     double y = rnd.nextDouble() * (screenSize.height - tileSize);
 
-    switch (rnd.nextInt(5)) {
-      case 0:
-        flies.add(HouseFly(this, x, y));
-        break;
-      case 1:
-        flies.add(DroolerFly(this, x, y));
-        break;
-      case 2:
-        flies.add(AgileFly(this, x, y));
-        break;
-      case 3:
-        flies.add(MachoFly(this, x, y));
-        break;
-      case 4:
-        flies.add(HungryFly(this, x, y));
-        break;
-    }
+    flies.add(HouseFly(this, x, y));
+
+//    switch (rnd.nextInt(5)) {
+//      case 0:
+//        flies.add(HouseFly(this, x, y));
+//        break;
+//      case 1:
+//        flies.add(DroolerFly(this, x, y));
+//        break;
+//      case 2:
+//        flies.add(AgileFly(this, x, y));
+//        break;
+//      case 3:
+//        flies.add(MachoFly(this, x, y));
+//        break;
+//      case 4:
+//        flies.add(HungryFly(this, x, y));
+//        break;
+//    }
   }
 
   void onTapDown(TapDownDetails d) {

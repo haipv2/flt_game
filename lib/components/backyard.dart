@@ -13,9 +13,9 @@ class Backyard {
     bgSprite = Sprite('bg/backyard.png');
     bgRect = Rect.fromLTWH(
       0,
-      game.screenSize.height - (game.tileSize * 23),
+      game.screenSize.height - (game.tileSize * 15),
       game.tileSize * 9,
-      game.tileSize * 23,
+      game.tileSize * 15,
     );
   }
 
