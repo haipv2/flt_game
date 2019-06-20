@@ -57,7 +57,7 @@ class Fly{
 
   void onTapDown() {
     isDead=true;
-    game.spawnFly();
+//    game.spawnFly();
   }
 
   void setTargetLocation() {
